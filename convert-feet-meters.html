@@ -4,7 +4,38 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<form action="">
+  <table cellspacing="10px" cellpadding="10px">
+      <tr>
+          <th> feet</th>
+          <th> meters</th>
+          <th> |</th>
+          <th> meters</th>
+          <th> feet</th>
+      </tr>
+      <tr>
+          <td>
+              <label for="input_feet"></label><input type="number" id="input_feet" oninput="feet_to_meters()">
+          </td>
+          <td id="to_meters"> </td>
+          <td> | </td>
+          <td>
+              <label for="input_meters"></label><input type="number" id="input_meters" oninput="meters_to_feet()">
+          </td>
+          <td id="to_feet"> </td>
+      </tr>
+  </table>
+</form>
 <body>
-
+<script>
+    function feet_to_meters() {
+        let feet = document.getElementById('input_feet').value;
+        document.getElementById('to_meters').innerHTML = 0.305*feet;
+    }
+    function meters_to_feet() {
+        let meter = document.getElementById('input_meters').value;
+        document.getElementById('to_feet').innerHTML = 3.279*meter
+    }
+</script>
 </body>
 </html>
